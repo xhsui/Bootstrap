@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>栅格系统 - Bootstrap 后台模板</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/comm.css">
+    <link rel="stylesheet" href="css/assist.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand admin-logo" href="index.html">LOGO<!-- <img alt="Brand" src="..."> --></a>
+                    <button class="nav-toggle nav" onclick="toggleNav()">
+                        <span class="glyphicon glyphicon-list"></span>
+                    </button>
+                </div>
+                <ul class="nav navbar-nav navbar-right navbar-menu">
+                    <li><a><span class="label label-default">您好，admin</span></a></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> 退出</a></li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-list"></span> 快捷操作
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-pencil"></span> 按钮1</a></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-align-left"></span> 按钮2</a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-user"></span> 按钮3</a></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-info-sign"></span> 按钮4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <nav class="navbar-inverse affix left-nav">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 后台首页</a></li>
+                <li class="active"><a href="grid.html"><span class="glyphicon glyphicon-th-large"></span> 栅格系统</a></li>
+                <li><a href="design.html"><span class="glyphicon glyphicon-bookmark"></span> 基本排版</a></li>
+                <li><a href="table.html"><span class="glyphicon glyphicon-list-alt"></span> 表格样式</a></li>
+                <li>
+                    <a class="collapsed" data-toggle="collapse" data-target="#form" href="javascript:;">
+                        <span class="glyphicon glyphicon-file"></span> 表单设计
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav" id="form">
+                        <li><a href="form.html"> 表单控件</a></li>
+                        <li><a href="form-style.html"> 表单样式</a></li>
+                        <li><a href="form-validate.html"> 正则验证</a></li>
+                        <li><a href="javascript:;"> Ajax 应用</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="collapsed" data-toggle="collapse" data-target="#style" href="javascript:;">
+                        <span class="glyphicon glyphicon-fire"></span> UI & 样式
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav" id="style">
+                        <li><a href="button.html"> 按钮</a></li>
+                        <li><a href="design-other.html"> 其他样式</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="collapsed" data-toggle="collapse" data-target="#siteManage" href="javascript:;">
+                        <span class="glyphicon glyphicon-cog"></span> JS 组件
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav" id="siteManage">
+                        <li><a href="map.html"> 地图坐标</a></li>
+                        <li><a href="javascript:;"> 报表数据</a></li>
+                    </ul>
+                </li>
+                <li><a href="ico.html"><span class="glyphicon glyphicon-glass"></span> 图标库</a></li>
+            </ul>
+        </nav>
+        <div class="content row">
+            <div class="col-xs-12">
+                <div class="page-header">
+                    <h1>栅格系统 <small>网页布局</small></h1>
+                </div>
+                <ol class="breadcrumb">
+                    <li><a href="#">后台首页</a></li>
+                    <li><a href="#">栅格系统</a></li>
+                </ol>
+
+                <h2>栅格介绍</h2>
+                <p>栅格系统是Bootstrap提供的一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。它包含了易于使用的预定义类，还有强大的mixin 用于生成更具语义的布局。栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局，你的内容就可以放入这些创建好的布局中。</p>
+
+                <h2>栅格参数</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>超小屏幕<small>手机 (&lt;768px)</small></th>
+                                <th>小屏幕<small>平板 (≥768px)</small></th>
+                                <th>中等屏幕<small>桌面显示器 (≥992px)</small></th>
+                                <th>大屏幕<small>大桌面显示器 (≥1200px)</small></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="text-nowrap" scope="row">栅格系统行为</th>
+                                <td>总是水平排列</td>
+                                <td colspan="3">开始是堆叠在一起的，当大于这些阈值时将变为水平排列并向下兼容</td></tr>
+                            <tr>
+                                <th class="text-nowrap" scope="row"><code>.container</code>最大宽度</th>
+                                <td>None （自动）</td>
+                                <td>750px</td>
+                                <td>970px</td>
+                                <td>1170px</td></tr>
+                            <tr>
+                                <th class="text-nowrap" scope="row">类前缀</th>
+                                <td><code>.col-xs-</code></td>
+                                <td><code>.col-sm-</code></td>
+                                <td><code>.col-md-</code></td>
+                                <td><code>.col-lg-</code></td>
+                            </tr>
+                            <tr>
+                                <th class="text-nowrap" scope="row">列（column）数</th>
+                                <td colspan="4">12</td></tr>
+                            <tr>
+                                <th class="text-nowrap" scope="row">最大列（column）宽</th>
+                                <td class="text-muted">自动</td>
+                                <td>~62px</td>
+                                <td>~81px</td>
+                                <td>~97px</td></tr>
+                            <tr>
+                                <th class="text-nowrap" scope="row">槽（gutter）宽</th>
+                                <td colspan="4">30px （每列左右均有 15px）</td></tr>
+                            <tr>
+                                <th class="text-nowrap" scope="row">可嵌套</th>
+                                <td colspan="4">是</td></tr>
+                            <tr>
+                                <th class="text-nowrap" scope="row">偏移（Offsets）</th>
+                                <td colspan="4">是</td></tr>
+                            <tr>
+                                <th class="text-nowrap" scope="row">列排序</th>
+                                <td colspan="4">是</td>
+                            </tr>
+                            <tr>
+                                <th class="text-nowrap" scope="row">其他参数</th>
+                                <td colspan="4">
+                                    <ul>
+                                        <li>布局容器
+                                            <ol>
+                                                <li>流式布局：<code>.container-fluid</code></li>
+                                                <li>普通布局：<code>.container</code></li>
+                                            </ol>
+                                        </li>
+                                        <li>行<code>.row</code>必须包含在<code>.container-fluid</code>或者<code>.container</code>的布局容器中</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>栅格示例</h2>
+                <div class="bs-docs-grid container-fluid">
+                    <div class="row show-grid">
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                    </div>
+                    <div class="row show-grid">
+                        <div class="col-md-8">.col-md-8</div>
+                        <div class="col-md-4">.col-md-4</div>
+                    </div>
+                    <div class="row show-grid">
+                        <div class="col-md-4">.col-md-4</div>
+                        <div class="col-md-4">.col-md-4</div>
+                        <div class="col-md-4">.col-md-4</div>
+                    </div>
+                    <div class="row show-grid">
+                        <div class="col-md-6">.col-md-6</div>
+                        <div class="col-md-6">.col-md-6</div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.artDialog.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/comm.js"></script>
+<script type="text/javascript">
+</script>
+</body>
+</html>

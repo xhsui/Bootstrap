@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/comm.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand admin-logo" href="index.html">LOGO<!-- <img alt="Brand" src="..."> --></a>
+                    <button class="nav-toggle nav" onclick="toggleNav()">
+                        <span class="glyphicon glyphicon-list"></span>
+                    </button>
+                </div>
+                <ul class="nav navbar-nav navbar-right navbar-menu">
+                    <li><a><span class="label label-default">您好，admin</span></a></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> 退出</a></li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-list"></span> 快捷操作
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-pencil"></span> 辅助按钮1</a></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-align-left"></span> 辅助按钮2</a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-user"></span> 辅助按钮3</a></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-info-sign"></span> 辅助按钮4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <nav class="navbar-inverse affix left-nav">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 后台首页</a></li>
+                <li><a href="grid.html"><span class="glyphicon glyphicon-th-large"></span> 栅格系统</a></li>
+                <li><a href="design.html"><span class="glyphicon glyphicon-bookmark"></span> 基本排版</a></li>
+                <li class="active"><a href="table.html"><span class="glyphicon glyphicon-list-alt"></span> 表格样式</a></li>
+                <li>
+                    <a class="collapsed" data-toggle="collapse" data-target="#form" href="javascript:;">
+                        <span class="glyphicon glyphicon-file"></span> 表单设计
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav" id="form">
+                        <li><a href="form.html"> 表单控件</a></li>
+                        <li><a href="form-style.html"> 表单样式</a></li>
+                        <li><a href="form-validate.html"> 正则验证</a></li>
+                        <li><a href="javascript:;"> Ajax 应用</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="collapsed" data-toggle="collapse" data-target="#style" href="javascript:;">
+                        <span class="glyphicon glyphicon-fire"></span> UI & 样式
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav" id="style">
+                        <li><a href="button.html"> 按钮</a></li>
+                        <li><a href="design-other.html"> 其他样式</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="collapsed" data-toggle="collapse" data-target="#siteManage" href="javascript:;">
+                        <span class="glyphicon glyphicon-cog"></span> JS 组件
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav" id="siteManage">
+                        <li><a href="map.html"> 地图坐标</a></li>
+                        <li><a href="javascript:;"> 报表数据</a></li>
+                    </ul>
+                </li>
+                <li><a href="ico.html"><span class="glyphicon glyphicon-glass"></span> 图标库</a></li>
+            </ul>
+        </nav>
+        <div class="content row">
+            <div class="col-xs-12">
+                <div class="page-header">
+                    <h1>表格样式 <small>Table</small></h1>
+                </div>
+                <ol class="breadcrumb">
+                    <li><a href="#">后台首页</a></li>
+                    <li><a href="#">表格样式</a></li>
+                </ol>
+                
+                <h2>表格参数</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>参数</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <th class="text-nowrap" scope="row">布局</th>
+                                  <td>
+                                      <p>响应式：将任何 <code>.table</code> 元素包裹在 <code>.table-responsive</code> 元素内，即可创建响应式表格，其会在小屏幕设备上（小于768px）水平滚动。当屏幕大于 768px 宽度时，水平滚动条消失。</p>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <th class="text-nowrap" scope="row">样式</th>
+                                  <td>
+                                      <ul>
+                                          <li>
+                                              <dl>
+                                                  <dt>table</dt>
+                                                  <dd><code>.table</code>赋予基本的样式 — 少量的内补（padding）和水平方向的分隔线</dd>
+                                                  <dd><code>.table-striped</code>斑马条纹样式</dd>
+                                                  <dd><code>.table-bordered</code>增加边框</dd>
+                                                  <dd><code>.table-hover</code>鼠标悬停</dd>
+                                                  <dd><code>.table-condensed</code>单元格中的内补（padding）均会减半</dd>
+                                              </dl>
+                                          </li>
+                                      </ul>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <th class="text-nowrap" scope="row">行</th>
+                                  <td>
+                                      <ul>
+                                          <li><code>.active</code>鼠标悬停在行或单元格上时所设置的颜色</li>
+                                          <li><code>.success</code>标识成功或积极的动作</li>
+                                          <li><code>.info</code>标识普通的提示信息或动作</li>
+                                          <li><code>.warning</code>标识警告或需要用户注意</li>
+                                          <li><code>.danger</code>标识危险或潜在的带来负面影响的动作</li>
+                                      </ul>
+                                  </td>
+                              </tr>
+                          </tbody>
+                    </table>
+                </div>
+                  
+
+                <h2>响应式表格</h2>
+                <p>将任何 <code>.table</code> 元素包裹在 <code>.table-responsive</code> 元素内，即可创建响应式表格，其会在小屏幕设备上（小于768px）水平滚动。当屏幕大于 768px 宽度时，水平滚动条消失。</p>
+                <p>响应式表格使用了 <code>overflow-y: hidden</code> 属性，这样就能将超出表格底部和顶部的内容截断。特别是，也可以截断下拉菜单和其他第三方组件。 </p>
+                <h4>Firefox 和 <code>fieldset</code> 元素</h4>
+                <p>Firefox 浏览器对 <code>fieldset</code> 元素设置了一些影响 <code>width</code> 属性的样式，导致响应式表格出现问题。除非使用我们下面提供的针对 Firefox 的 hack 代码，否则无解：</p>
+                <div class="highlight">
+                    <pre>
+                        <code class="language-css" data-lang="css">
+<span class="k">@-moz-document</span> <span class="n">url-prefix</span><span class="p">()</span> <span class="p">{</span>
+<span class="nt">fieldset</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">table-cell</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+                        </code>
+                    </pre>
+                </div>
+                <p>更多信息请参考 <a href="https://stackoverflow.com/questions/17408815/fieldset-resizes-wrong-appears-to-have-unremovable-min-width-min-content/17863685#17863685">this Stack Overflow answer</a>.</p>
+
+                <h2>表格示例</h2>
+                <table class="table table-striped table-bordered table-hover table-condensed">
+					<thead><th></th><th>姓名</th><th>年龄</th></thead>
+					<tbody>
+						<tr class="success">
+							<td>一年级</td>
+							<td>张三</td>
+							<td>8</td>
+						</tr>
+						<tr>
+							<td>二年级</td>
+							<td>李四</td>
+							<td>9</td>
+						</tr>
+						<tr>
+							<td>三年级</td>
+							<td>王五</td>
+							<td>10</td>
+						</tr>
+					</tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.artDialog.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/comm.js"></script>
+<script type="text/javascript">
+</script>
+</body>
+</html>

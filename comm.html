@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/comm.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand admin-logo" href="index.html">LOGO<!-- <img alt="Brand" src="..."> --></a>
+                    <button class="nav-toggle nav" onclick="toggleNav()">
+                        <span class="glyphicon glyphicon-list"></span>
+                    </button>
+                </div>
+                <ul class="nav navbar-nav navbar-right navbar-menu">
+                    <li><a><span class="label label-default">您好，admin</span></a></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> 退出</a></li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-list"></span> 快捷操作
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-pencil"></span> 按钮1</a></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-align-left"></span> 按钮2</a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-user"></span> 按钮3</a></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-info-sign"></span> 按钮4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <nav class="navbar-inverse affix left-nav">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="active"><a href="index.html"><span class="glyphicon glyphicon-fire"></span> 后台首页</a></li>
+                <li><a href="grid.html"><span class="glyphicon glyphicon-fire"></span> 栅格系统</a></li>
+                <li><a href="ico.html"><span class="glyphicon glyphicon-fire"></span> 图标库</a></li>
+                <li>
+                    <a class="collapsed" data-toggle="collapse" data-target="#arcManage" href="javascript:;">
+                        <span class="glyphicon glyphicon-file"></span> 栅格系统
+                    <span class="caret"></span></a>
+                    <ul class="collapse nav navbar-nav" id="arcManage">
+                        <li><a href="arc-add.html"> 常规图标</a></li>
+                        <li><a href="arc-list.html"> 按钮图标</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="collapsed" data-toggle="collapse" data-target="#siteManage" href="javascript:;">
+                        <span class="glyphicon glyphicon-cog"></span> 网站管理
+                    <span class="caret"></span></a>
+                    <ul class="collapse nav navbar-nav" id="siteManage">
+                        <li><a href="user-manage.html"> 用户管理</a></li>
+                        <li><a href="site-info.html"> 站点信息</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span> 前台首页</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-off"></span> 退出登录</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="page-header">
+                <h1>简介 <small>by Xhsui</small></h1>
+            </div>
+            <ol class="breadcrumb">
+                <li><a href="#">后台首页</a></li>
+                <li><a href="#">简介</a></li>
+            </ol>
+            
+            
+        </div>
+    </div>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.artDialog.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/comm.js"></script>
+<script type="text/javascript">
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/comm.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand admin-logo" href="index.html">LOGO<!-- <img alt="Brand" src="..."> --></a>
+                    <button class="nav-toggle nav" onclick="toggleNav()">
+                        <span class="glyphicon glyphicon-list"></span>
+                    </button>
+                </div>
+                <ul class="nav navbar-nav navbar-right navbar-menu">
+                    <li><a><span class="label label-default">您好，admin</span></a></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> 退出</a></li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-list"></span> 快捷操作
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-pencil"></span> 辅助按钮1</a></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-align-left"></span> 辅助按钮2</a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-user"></span> 辅助按钮3</a></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-info-sign"></span> 辅助按钮4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <nav class="navbar-inverse affix left-nav">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 后台首页</a></li>
+                <li><a href="grid.html"><span class="glyphicon glyphicon-th-large"></span> 栅格系统</a></li>
+                <li><a href="design.html"><span class="glyphicon glyphicon-bookmark"></span> 基本排版</a></li>
+                <li><a href="table.html"><span class="glyphicon glyphicon-list-alt"></span> 表格样式</a></li>
+                <li>
+                    <a class="collapsed" data-toggle="collapse" data-target="#form" href="javascript:;">
+                        <span class="glyphicon glyphicon-file"></span> 表单设计
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav" id="form">
+                        <li><a href="form.html"> 表单控件</a></li>
+                        <li><a href="form-style.html"> 表单样式</a></li>
+                        <li><a href="form-validate.html"> 正则验证</a></li>
+                        <li><a href="javascript:;"> Ajax 应用</a></li>
+                    </ul>
+                </li>
+                <li class="curr">
+                    <a class="collapsed" data-toggle="collapse" data-target="#style" href="javascript:;">
+                        <span class="glyphicon glyphicon-fire"></span> UI & 样式
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav in" id="style">
+                        <li class="active"><a href="button.html"> 按钮</a></li>
+                        <li><a href="design-other.html"> 其他样式</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="collapsed" data-toggle="collapse" data-target="#siteManage" href="javascript:;">
+                        <span class="glyphicon glyphicon-cog"></span> JS 组件
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav" id="siteManage">
+                        <li><a href="map.html"> 地图坐标</a></li>
+                        <li><a href="javascript:;"> 报表数据</a></li>
+                    </ul>
+                </li>
+                <li><a href="ico.html"><span class="glyphicon glyphicon-glass"></span> 图标库</a></li>
+            </ul>
+        </nav>
+        <div class="content row">
+            <div class="col-xs-12">
+                <div class="page-header">
+                    <h1>按钮 <small>button</small></h1>
+                </div>
+                <ol class="breadcrumb">
+                    <li><a href="#">后台首页</a></li>
+                    <li><a href="#">按钮</a></li>
+                </ol>
+                
+                <h2>按钮简介</h2>
+                <p>可以使用a,button,input标签添加<code>.btn</code>类则可以实现基本的按钮样式 <button type="button" class="btn">示例</button></p>
+                
+                <h2>按钮样式</h2>
+                <p>按钮样式所需要的类：</p>
+                <ul class="list-inline">
+                    <li>默认 <code>.btn-default</code></li>
+                    <li>首选 <code>.btn-primary</code></li>
+                    <li>成功 <code>.btn-warning</code></li>
+                    <li>警告 <code>.btn-default</code></li>
+                    <li>信息 <code>.btn-info</code></li>
+                    <li>危险 <code>.btn-danger</code></li>
+                </ul>
+                <button class="btn btn-default">默认</button>
+                <button class="btn btn-primary">首选</button>
+                <button class="btn btn-success">成功</button>
+                <button class="btn btn-warning">警告</button>
+                <button class="btn btn-info">信息</button>
+                <button class="btn btn-danger">危险</button>
+
+                <h2>按钮尺寸</h2>
+                <p>按钮尺寸所需要的类：</p>
+                <ul class="list-inline">
+                    <li>大尺寸 <code>.btn-lg</code></li>
+                    <li>小尺寸 <code>.btn-sm</code></li>
+                    <li>特小尺寸 <code>.btn-xs</code></li>
+                </ul>
+                <button class="btn btn-lg btn-primary">大尺寸</button>
+                <button class="btn btn-sm btn-primary">小尺寸</button>
+                <button class="btn btn-xs btn-primary">特尺寸</button>
+
+            </div>
+        </div>
+    </div>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.artDialog.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/comm.js"></script>
+<script type="text/javascript">
+</script>
+</body>
+</html>

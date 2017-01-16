@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/comm.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand admin-logo" href="index.html">LOGO<!-- <img alt="Brand" src="..."> --></a>
+                    <button class="nav-toggle nav" onclick="toggleNav()">
+                        <span class="glyphicon glyphicon-list"></span>
+                    </button>
+                </div>
+                <ul class="nav navbar-nav navbar-right navbar-menu">
+                    <li><a><span class="label label-default">您好，admin</span></a></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> 退出</a></li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-list"></span> 快捷操作
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-pencil"></span> 按钮1</a></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-align-left"></span> 按钮2</a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-user"></span> 按钮3</a></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-info-sign"></span> 按钮4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <nav class="navbar-inverse affix left-nav">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 后台首页</a></li>
+                <li><a href="grid.html"><span class="glyphicon glyphicon-th-large"></span> 栅格系统</a></li>
+                <li><a href="design.html"><span class="glyphicon glyphicon-bookmark"></span> 基本排版</a></li>
+                <li><a href="table.html"><span class="glyphicon glyphicon-list-alt"></span> 表格样式</a></li>
+                <li class="curr">
+                    <a class="collapsed" data-toggle="collapse" data-target="#form" href="javascript:;">
+                        <span class="glyphicon glyphicon-file"></span> 表单设计
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav in" id="form">
+                        <li><a href="form.html"> 表单控件</a></li>
+                        <li><a href="form-style.html"> 表单样式</a></li>
+                        <li class="active"><a href="form-validate.html"> 正则验证</a></li>
+                        <li><a href="javascript:;"> Ajax 应用</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="collapsed" data-toggle="collapse" data-target="#style" href="javascript:;">
+                        <span class="glyphicon glyphicon-fire"></span> UI & 样式
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav" id="style">
+                        <li><a href="button.html"> 按钮</a></li>
+                        <li><a href="design-other.html"> 其他样式</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="collapsed" data-toggle="collapse" data-target="#siteManage" href="javascript:;">
+                        <span class="glyphicon glyphicon-cog"></span> JS 组件
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav" id="siteManage">
+                        <li><a href="map.html"> 地图坐标</a></li>
+                        <li><a href="javascript:;"> 报表数据</a></li>
+                    </ul>
+                </li>
+                <li><a href="ico.html"><span class="glyphicon glyphicon-glass"></span> 图标库</a></li>
+            </ul>
+        </nav>
+        <div class="content row">
+            <div class="col-xs-12">
+                <div class="page-header">
+                    <h1>正则验证 <small>常用的表单正则验证</small></h1>
+                </div>
+                <ol class="breadcrumb">
+                    <li><a href="#">后台首页</a></li>
+                    <li><a href="#">表单设计</a></li>
+                    <li><a href="#">正则验证</a></li>
+                </ol>
+                <div class="col-md-8 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">正则验证栏</div>
+                        <div class="panel-body">
+                            <form onSubmit="return false">
+                              <div class="form-group">
+                                <label for="reg">请输入验证的正则表达式</label>
+                                <input type="text" class="form-control" id="reg" placeholder="例如验证中文姓名的正则：">
+                              </div>
+                              <div class="form-group has-success has-feedback">
+                                <label for="txt">请输入你要验证的内容</label>
+                                <input type="text" class="form-control" id="txt" aria-describedby="inputSuccess2Status">
+                              </div>
+                              <div id="alert" class="alert alert-info" role="alert">请先输入正则表达式，然后输入验证内容</div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">正则验证语法</div>
+                        <div class="panel-body">
+                            <div class="alert alert-info" role="alert">正则表达式的写法请参考 <a href="http://blog.xhsui.com/archives/3/">PHP正则表达式</a></div>
+                            <pre>
+                                <code class="language-html" data-lang="javascript">
+<span class="nt">&lt;script</span><span class="na"><span class="nt">&gt;</span>
+    //javascript的正则验证 是否是整形
+    function IsInteger()     
+    {       
+            var str = document.getElementById('str').value.trim();    
+            if(str.length!=0){    
+            reg=/^[-+]?\d*$/;     
+            if(!reg.test(str)){    
+                alert("对不起，您输入的整数类型格式不正确!");//请将“整数类型”要换成你要验证的那个属性名称！    
+            }    
+            }    
+    }
+<span class="nt">&lt;/script&gt;</span>
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                          <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              名称
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <ul>
+                                <li>英文姓名：<br><strong><code>/^[\u4e00-\u9fa5]{2,4}$/</code></strong><hr></li>
+                                <li>中文姓名：<br><strong><code>/^[A-Za-z0-9]+$/</code></strong><hr></li>
+                                <li>用户名：<br><strong><code>/^[A-Za-z0-9_\-\u4e00-\u9fa5]+$/</code></strong></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              手机号
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                          <div class="panel-body">
+                            <ul>
+                                <li>移动号段：<strong><code>/^[A-Za-z0-9\u4e00-\u9fa5]+$/</code></strong></li>
+                                <li>联通号段：<strong><code>/^[A-Za-z0-9\u4e00-\u9fa5]+$/</code></strong></li>
+                                <li>电信号段：<strong><code>/^[A-Za-z0-9\u4e00-\u9fa5]+$/</code></strong></li>
+                                <li>全网号段：<strong><code>/^[A-Za-z0-9\u4e00-\u9fa5]+$/</code></strong></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              密码
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                          <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                              邮箱
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                          <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFive">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                              网址
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                          <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.artDialog.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/comm.js"></script>
+<script type="text/javascript">
+
+    $('#txt').bind('input propertychange', function() { 
+        var reg = $('#reg').val();
+        var txt = $(this).val();
+        res = Validate(reg,txt);
+        
+        $("#alert").attr('class','alert alert-'+res.style).text(res.msg);
+        $("txt").parent().attr('class',"form-group has-feedback has-"+res.style);
+    })
+
+    //验证是否是整形
+    function Validate(reg, txt)     
+    {
+        // reg = /^[A-Za-z0-9\u4e00-\u9fa5]+$/;
+        if(reg.length!=0){
+            var reg = reg.slice(1,-1);
+            var reg = new RegExp(reg);
+            if(!reg.test(txt)){    
+                return {
+                    'style': 'warning',
+                    'msg': '验证失败,不匹配'
+                }
+            }else{
+                return {
+                    'style': 'success',
+                    'msg': '验证成功'
+                }
+            }
+        }else{
+            return {
+                'style': 'danger',
+                'msg': '正则表达式不能为空'
+            };
+        }
+    }
+</script>
+</body>
+</html>

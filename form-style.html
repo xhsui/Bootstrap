@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/comm.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand admin-logo" href="index.html">LOGO<!-- <img alt="Brand" src="..."> --></a>
+                    <button class="nav-toggle nav" onclick="toggleNav()">
+                        <span class="glyphicon glyphicon-list"></span>
+                    </button>
+                </div>
+                <ul class="nav navbar-nav navbar-right navbar-menu">
+                    <li><a><span class="label label-default">您好，admin</span></a></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> 退出</a></li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-list"></span> 快捷操作
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-pencil"></span> 按钮1</a></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-align-left"></span> 按钮2</a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-user"></span> 按钮3</a></li>
+                            <li><a href="javascript:;"><span class="glyphicon glyphicon-info-sign"></span> 按钮4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <nav class="navbar-inverse affix left-nav">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 后台首页</a></li>
+                <li><a href="grid.html"><span class="glyphicon glyphicon-th-large"></span> 栅格系统</a></li>
+                <li><a href="design.html"><span class="glyphicon glyphicon-bookmark"></span> 基本排版</a></li>
+                <li><a href="table.html"><span class="glyphicon glyphicon-list-alt"></span> 表格样式</a></li>
+                <li class="curr">
+                    <a class="collapsed" data-toggle="collapse" data-target="#form" href="javascript:;">
+                        <span class="glyphicon glyphicon-file"></span> 表单设计
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav in" id="form">
+                        <li><a href="form.html"> 表单控件</a></li>
+                        <li class="active"><a href="form-style.html"> 表单样式</a></li>
+                        <li><a href="form-validate.html"> 正则验证</a></li>
+                        <li><a href="javascript:;"> Ajax 应用</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="collapsed" data-toggle="collapse" data-target="#style" href="javascript:;">
+                        <span class="glyphicon glyphicon-fire"></span> UI & 样式
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav" id="style">
+                        <li><a href="button.html"> 按钮</a></li>
+                        <li><a href="design-other.html"> 其他样式</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="collapsed" data-toggle="collapse" data-target="#siteManage" href="javascript:;">
+                        <span class="glyphicon glyphicon-cog"></span> JS 组件
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="collapse nav navbar-nav" id="siteManage">
+                        <li><a href="map.html"> 地图坐标</a></li>
+                        <li><a href="javascript:;"> 报表数据</a></li>
+                    </ul>
+                </li>
+                <li><a href="ico.html"><span class="glyphicon glyphicon-glass"></span> 图标库</a></li>
+            </ul>
+        </nav>
+        <div class="content row">
+            <div class="col-xs-12">
+                <div class="page-header">
+                    <h1>表单样式 <small>布局</small></h1>
+                </div>
+                <ol class="breadcrumb">
+                    <li><a href="#">后台首页</a></li>
+                    <li><a href="#">表单设计</a></li>
+                    <li><a href="#">表单样式</a></li>
+                </ol>
+                
+                <h2>表单参数</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <th></th>
+                            <th>参数</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>样式</td>
+                                <td>
+                                    <ul>
+                                        <li>静默样式：可以使用p标签类似的行内文本标签加载<code>form-control-static</code>标签</li>
+                                        <li>控件尺寸：大 <code>.input-lg</code>、小 <code>.input-sm</code>，其它默认</li>
+                                        <li>焦点状态：表单控件的默认 outline 样式移除，然后对 :focus 状态赋予 box-shadow 属性。</li>
+                                        <li>禁用状态：1，为&lt;fieldset&gt; 设置 disabled 属性,可以禁用 &lt;fieldset&gt; 中包含的所有控件。2，给空间加上id="<code>disabledInput</code>属性"</li>
+                                        <li>只读状态：为控件加上readonly参数</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>排列</td>
+                                <td>
+                                    <ul>
+                                        <li>基本排列：外层<code>.form-group</code>中包含控件，空间需要<code>.form-control</code>类</li>
+                                        <li>水平排列：&lt;form class="<code>.form-horizontal</code>"&gt;，其他与基本排列写法一致</li>
+                                        <li>内联排列：&lt;form class="<code>.form-inline</code>"&gt;，其他与基本排列写法一致</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>被支持的控件</h2>
+                <p>表单布局支持的标准表单控件。包括大部分表单控件、文本输入域控件，还支持所有 HTML5 类型的输入控件： text、password、datetime、datetime-local、date、month、time、week、number、email、url、search、tel 和 color。</p>
+
+                <h2>表单示例</h2>
+                <div>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>提示：</strong> 如果您使用的是手持设备的屏幕，水平排列和内联排列和基本排列的样式相同。查看演示请尽量使用大尺寸屏幕的设备。
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">基本排列</div>
+                            <div class="panel-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleInputText">用户名</label>
+                                        <input type="text" class="form-control" id="exampleInputText" placeholder="文本框">
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="exampleInputPassword1">密码</label>
+                                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-default col-xs-12" onclick="alert('此表单仅为示例表单');return false;">提交</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">水平排列</div>
+                            <div class="panel-body">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="inputEmail3" placeholder="邮箱">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="inputPassword3" placeholder="密码">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> 记住密码
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-default">登录</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">内联表单</div>
+                            <div class="panel-body">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label for="exampleInputName2">姓名</label>
+                                        <input type="text" class="form-control" id="exampleInputName2" placeholder="姓名">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail2">邮箱</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="邮箱">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">发送</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">其他样式</div>
+                            <div class="panel-body">
+                                <form class="form-horizontal col-xs-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputAmount" class="col-sm-2 col-lg-1 control-label">图标</label>
+                                        <div class="form-group form-inline col-sm-10">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">￥</div>
+                                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="金额">
+                                                <div class="input-group-addon">.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-2 col-lg-1 control-label">静默</label>
+                                        <p class="form-control-static">email@example.com</p>
+                                    </div>
+                                    <div class="form-group has-success has-feedback">
+                                        <label class="control-label col-sm-2 col-lg-1" for="inputSuccess3">验证</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status">
+                                            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                                            <span id="inputSuccess3Status" class="sr-only">(success)</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-2 col-lg-1 control-label">静默</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control input-lg" type="text" placeholder=".input-lg">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.artDialog.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/comm.js"></script>
+<script type="text/javascript">
+</script>
+</body>
+</html>
