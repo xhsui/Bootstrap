@@ -1,0 +1,88 @@
+.login-page{
+	background-color: #292929;
+}
+.login{
+	position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 230px;
+    margin: auto;
+    top:-300px;
+}
+.login>div{
+	border: 1px solid #ccc;
+	padding: 20px;
+	border-radius: 20px;
+	background-color: #fff;
+}
+.login button{
+	background-color: #000;
+	border-color: #000;
+}
+.login button:hover{
+	background-color: #000;
+	border-color: #000;
+}
+
+.left-nav{
+	left: 0;
+	top: -50px;
+	padding: 100px 0;
+	bottom: -100px;
+	width: 200px;
+	transition: left .5s;
+	z-index: 999;
+	overflow-y:auto;
+}
+.left-nav ul{
+	margin:0
+}
+
+.left-nav li{
+/*	height:50px;
+	line-height: 50px;*/
+}
+.left-nav>ul>li{
+	margin:5px 0;	
+}
+.left-nav>ul>li>ul>li>a {
+    padding-left: 45px;
+}
+.left-nav li a{
+	width:200px;
+	padding: 15px 25px;
+	/*color:#777;*/
+}
+.left-nav.active{
+	left: 0;
+}
+
+.left-nav .curr{
+	background-color: #2B2B2B;
+    border-radius: 10px;
+}
+.nav-toggle{
+	display: none;
+	background: transparent;
+	border: 0;
+	color: #777;
+	text-align: center;
+	font-size: 24px;
+	margin-left: 15px;
+	outline: 0;
+}
+.content{
+	padding:50px 0 10px 200px;
+}
+
+/*for phone & mini size*/
+@media all and (max-width:767px){
+	.login-page{background-color: #fff}
+    .admin-logo{float:right;}
+    .navbar-menu{display: none;}
+    .left-nav{left:-200px;}
+    .nav-toggle{display: inline-block; padding-top: 12px;}
+    .content{padding-left:0;}
+}
