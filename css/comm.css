@@ -79,7 +79,6 @@
 
 /*for phone & mini size*/
 @media all and (max-width:767px){
-	.login-page{background-color: #fff}
     .admin-logo{float:right;}
     .navbar-menu{display: none;}
     .left-nav{left:-200px;}
